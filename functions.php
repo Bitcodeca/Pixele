@@ -92,7 +92,7 @@ function portada_taxonomy() {
 // Now register the non-hierarchical taxonomy like tag
 
   register_taxonomy('portada','post',array(
-    'hierarchical' => false,
+    'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
     'show_admin_column' => true,
@@ -129,7 +129,7 @@ function tipo_taxonomy() {
 // Now register the non-hierarchical taxonomy like tag
 
   register_taxonomy('tipo','post',array(
-    'hierarchical' => false,
+    'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
     'show_admin_column' => true,
