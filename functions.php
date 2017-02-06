@@ -6,34 +6,36 @@
 */
 function awesome_script_enqueue() {
 	//css
-	wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', array(), '3.3.4', 'all');
-	wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), '1.0.0', 'all');
-	wp_enqueue_style('jgallery', get_template_directory_uri() . '/css/jgallery.css', array(), '1.0.0', 'all');
+	wp_enqueue_style('animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', array(), '1.0.0', 'all');
+  wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', array(), '1.0.0', 'all');
+  if(is_page('portafolio')){
+    wp_enqueue_style('jgallery', get_template_directory_uri() . '/css/jgallery.css', array(), '1.0.0', 'all');
+    wp_enqueue_style('jgallerymin', get_template_directory_uri() . '/css/jgallery.min.css', array(), '1.0.0', 'all');
+  }
+  if(is_page('home')){
+    wp_enqueue_style('fancyboxcss', get_template_directory_uri() . '/css/jquery.fancybox.css', array(), '1.0.0', 'all');
+    wp_enqueue_style('fancyboxthumbnailcss', get_template_directory_uri() . '/css/jquery.fancybox-thumbs.css', array(), '1.0.0', 'all');
+  }
 	wp_enqueue_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '1.0.0', 'all');
-	wp_enqueue_style('demo', get_template_directory_uri() . '/css/demo.css', array(), '1.0.0', 'all');
-	wp_enqueue_style('set2', get_template_directory_uri() . '/css/set2.css', array(), '1.0.0', 'all');
-	wp_enqueue_style('jgallerymin', get_template_directory_uri() . '/css/jgallery.min.css', array(), '1.0.0', 'all');
-	wp_enqueue_style('customstyle', get_template_directory_uri() . '/css/awesome.css', array(), '1.0.0', 'all');
-	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array(), '1.0.0', 'all');
-	wp_enqueue_style('fancyboxcss', get_template_directory_uri() . '/css/jquery.fancybox.css', array(), '1.0.0', 'all');
-	wp_enqueue_style('fancyboxthumbnailcss', get_template_directory_uri() . '/css/jquery.fancybox-thumbs.css', array(), '1.0.0', 'all');
-	wp_enqueue_style('fancyboxbuttonscss', get_template_directory_uri() . '/css/jquery.fancybox-buttons.css', array(), '1.0.0', 'all');
+  wp_enqueue_style('Materializecss', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css', array(), '0.98.0', 'all');
+  wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.4', 'all');
+  wp_enqueue_style('css', get_template_directory_uri() . '/css/awesome.css', array(), '1.0.4', 'all');
 	
 	//js
-	wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.3.4', true);
-	wp_enqueue_script('bootstrapjs', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', array(), '1.0.0', true);
-	wp_enqueue_script('isotopejs', 'http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js', array(), '1.0.0', true);
-	wp_enqueue_script('isotopeimgjs', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js', array(), '1.0.0', true);
-	wp_enqueue_script('awesomejs', get_template_directory_uri() . '/js/awesome.js', array(), '1.0.0', true);
-	wp_enqueue_script('wowjs', get_template_directory_uri() . '/js/wow.min.js', array(), '1.0.0', true);
-	wp_enqueue_script('jgalleryminjs', get_template_directory_uri() . '/js/jgallery.min.js', array(), '1.0.0', true);
-	wp_enqueue_script('touchswipejs', get_template_directory_uri() . '/js/touchswipe.min.js', array(), '1.0.0', true);
-	wp_enqueue_script('fancyboxjs', get_template_directory_uri() . '/js/jquery.fancybox.pack.js', array(), '1.0.0', true);
-	wp_enqueue_script('fancybox1js', get_template_directory_uri() . '/js/jquery.fancybox.js', array(), '1.0.0', true);
-	wp_enqueue_script('fancybox2js', get_template_directory_uri() . '/js/jquery.fancybox-thumbs.js', array(), '1.0.0', true);
-	wp_enqueue_script('fancybox3js', get_template_directory_uri() . '/js/jquery.fancybox-media.js', array(), '1.0.0', true);
-	wp_enqueue_script('fancybox4js', get_template_directory_uri() . '/js/jquery.fancybox-buttons.js', array(), '1.0.0', true);
-	wp_enqueue_script('classiejs', get_template_directory_uri() . '/js/classie.js', array(), '1.0.0', true);
+	wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js', array(), '3.1.0', true);
+  wp_enqueue_script('Materialize js', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js', array(), '0.98.0', true);
+  if(is_page('portafolio')){
+    wp_enqueue_script('jgalleryminjs', get_template_directory_uri() . '/js/jgallery.min.js', array(), '1.0.0', true);
+    wp_enqueue_script('touchswipejs', get_template_directory_uri() . '/js/touchswipe.min.js', array(), '1.0.0', true);
+    //wp_enqueue_script('classiejs', 'https://cdnjs.cloudflare.com/ajax/libs/classie/1.0.1/classie.min.js', array(), '1.0.0', true);
+  }
+  if(is_page('home')){
+    wp_enqueue_script('isotopejs', 'http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js', array(), '1.0.0', true);
+    wp_enqueue_script('isotopeimgjs', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js', array(), '1.0.0', true);
+    wp_enqueue_script('wowjs', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js', array(), '1.0.0', true);
+    wp_enqueue_script('fancyboxjs', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js', array(), '1.0.0', true);
+    wp_enqueue_script('fancybox Thumb', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.js', array(), '1.0.0', true);
+  }
 }
 
 add_action( 'wp_enqueue_scripts', 'awesome_script_enqueue');
@@ -88,9 +90,6 @@ function portada_taxonomy() {
     'choose_from_most_used' => __( 'Escoger de las Portadas utilizadas' ),
     'menu_name' => __( 'Portada' ),
   ); 
-
-// Now register the non-hierarchical taxonomy like tag
-
   register_taxonomy('portada','post',array(
     'hierarchical' => true,
     'labels' => $labels,
@@ -281,57 +280,92 @@ function paginanosotros(){
  add_action("init","paginasesion");
 
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////BARRA DE NAVEGACION
-class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu
-{
-    function start_lvl( &$output, $depth = 0, $args = array() )
-    {
-        $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class=\"sub-menu dropdown-menu\">\n";
+if( ! class_exists( 'Materialize_Walker_Desktop_Nav_Menu' ) ) :
+
+    class Materialize_Walker_Desktop_Nav_Menu extends Walker_Nav_Menu {
+
+        private $curItem;
+
+        /**
+         * Starts the list before the elements are added.
+         *
+         * Adds classes to the unordered list sub-menus.
+         *
+         * @param string $output Passed by reference. Used to append additional content.
+         * @param int    $depth  Depth of menu item. Used for padding.
+         * @param array  $args   An array of arguments. @see wp_nav_menu()
+         */
+        function start_lvl( &$output, $depth = 0, $args = array() ) {
+
+            // Depth-dependent classes.
+            $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
+            $display_depth = ( $depth + 1); // because it counts the first submenu as 0
+            $classes = array(
+                'sub-menu',
+                ( $display_depth % 2  ? 'menu-odd' : 'menu-even' ),
+                ( $display_depth >=2 ? 'sub-sub-menu' : '' ),
+                'menu-depth-' . $display_depth
+            );
+            $class_names = implode( ' ', $classes );
+
+            // Build HTML for output.
+            $output .= "\n" . $indent . '<ul id="' . $this->curItem->post_name . '" class="' . $class_names . ' dropdown-content">' . "\n";
+        }
+
+        /**
+         * Start the element output.
+         *
+         * Adds main/sub-classes to the list items and links.
+         *
+         * @param string $output Passed by reference. Used to append additional content.
+         * @param object $item   Menu item data object.
+         * @param int    $depth  Depth of menu item. Used for padding.
+         * @param array  $args   An array of arguments. @see wp_nav_menu()
+         * @param int    $id     Current item ID.
+         */
+        function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+            global $wp_query;
+            $this->curItem = $item;
+            $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
+
+            // Depth-dependent classes.
+            $depth_classes = array(
+                ( $depth == 0 ? 'main-menu-item' : 'sub-menu-item' ),
+                ( $depth >=2 ? 'sub-sub-menu-item' : '' ),
+                ( $depth % 2 ? 'menu-item-odd' : 'menu-item-even' ),
+                'menu-item-depth-' . $depth
+            );
+
+            $depth_class_names = esc_attr( implode( ' ', $depth_classes ) );
+
+            // Passed classes.
+            $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+            $class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) ) );
+
+            // Build HTML.
+            $output .= $indent . '<li id="nav-menu-item-'. $item->ID . '" class="' . $depth_class_names . ' ' . $class_names . '">';
+            if( in_array( 'menu-item-has-children', $item->classes ) ) {$dropdown='dropdown-button ';}else{$dropdown='';}
+            // Link attributes.
+            $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+            $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+            $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+            $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+            $attributes .= ' class="menu-link ' .$dropdown. ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
+
+            if( in_array( 'menu-item-has-children', $item->classes ) ) 
+                $attributes .= ' data-activates="' . $item->post_name . '"';
+
+            // Build HTML output and pass through the proper filter.
+            $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
+                $args->before,
+                $attributes,
+                $args->link_before,
+                apply_filters( 'the_title', $item->title, $item->ID ),
+                $args->link_after,
+                $args->after
+            );
+            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+        }
     }
 
-    function display_element ($element, &$children_elements, $max_depth, $depth = 0, $args, &$output)
-    {
-        $element->hasChildren = isset($children_elements[$element->ID]) && !empty($children_elements[$element->ID]);
-
-        return parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
-    }
-
-    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-        $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-        $classes[] = 'menu-item-' . $item->ID;
-        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-        if($item->current || $item->current_item_ancestor || $item->current_item_parent){
-            $class_names .= ' active';
-        }
-        $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
-        $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
-        $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
-        $output .= $indent . '<li' . $id . $class_names .'>';
-        $atts = array();
-        $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
-        $atts['target'] = ! empty( $item->target )     ? $item->target     : '';
-        $atts['rel']    = ! empty( $item->xfn )        ? $item->xfn        : '';
-        $atts['href']   = ! empty( $item->url )        ? $item->url        : '';
-        $atts['class']  = ($item->hasChildren)         ? 'dropdown-toggle' : '';
-        $atts['data-toggle']  = ($item->hasChildren)   ? 'dropdown'        : '';
-        $atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
-        $attributes = '';
-        foreach ( $atts as $attr => $value ) {
-            if ( ! empty( $value ) ) {
-                $value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
-                $attributes .= ' ' . $attr . '="' . $value . '"';
-            }
-        }
-        $item_output = $args->before;
-        $item_output .= '<a'. $attributes .'>';
-        $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-        if( $item->hasChildren) {
-            $item_output .= ' <b class="caret"></b>';
-        }
-        $item_output .= '</a>';
-        $item_output .= $args->after;
-        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-    }
-}
-update_option('image_default_link_type','none');
+endif;

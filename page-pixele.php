@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-12">
                 <h2 class="text-center"><?php the_title(); ?></h2>
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                    		<?php the_post_thumbnail( 'full', array('class' => 'nosotrosimg')); ?>
                     </div>
                     <?php the_content(); ?>

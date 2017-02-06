@@ -3,13 +3,8 @@
       	 <div id="footer">
              <div class="container">
                 <div class="row">
-                    <div class="text-left col-md-6 col-sm-6 col-xs-12 hidden-xs">
-                        <p class="copyright text-muted small">&copy; 2015 Pixelé CA | RIF: J-00000000-0 | Todos los Derechos Reservados
-                        <br>
-                        Desarrollado por <b><a href="http://bitcode.com.ve/" style="color:#bbb">BitCODE</a></b></p>
-                    </div>
-                    <div class="visible-xs-inline col-xs-12 text-left " style="margin-bottom:-17px;">
-                        <p class="copyright text-muted small">&copy; 2015 Pixelé CA | RIF: J-00000000-0 | Todos los Derechos Reservados. Desarrollado por <b><a href="http://bitcode.com.ve/" style="color:white">BitCODE</a></b></p>
+                    <div class="col-xs-12 left-align">
+                        <p class="copyright text-muted small">&copy; 2015 Pixelé CA | RIF: J-00000000-0 | Todos los Derechos Reservados. Desarrollado por <a href="http://bitcodeweb.com/" target="_blank"><img src="<?php echo get_bloginfo('template_directory');?>/img/logobitcode.svg" height="20px" width="auto" class="verticalalignbottom" style="vertical-align: sub;"></a></p>
                     </div>
                     <div class="text-center col-md-6 col-sm-6 col-xs-12">
                         <a href="#"><img src="<?php echo get_bloginfo('template_directory');?>/img/fb.png"></a>
@@ -27,5 +22,10 @@
 	<script>
       new WOW().init();
     </script> 
+    <script>
+         jQuery(document).ready(function(){
+            jQuery(".button-collapse").sideNav();
+        });
+    </script>
 	</body>
 </html>
